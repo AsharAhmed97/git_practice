@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Age Calculator</title>   
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <label>Enter your birth date</label>
+    <input type="date" id="data">
+    <label>Enter current date</label>
+    <input type="date" id="currentdate">
+    <button onclick="ageCalculator()">Calculate</button>
+    <div id="result"></div>
+    <script>
+        function ageCalculator(){
+            let arr=[];
+            let arr2=[];
+            let birthyear="";
+            let currentyear="";
+            let birthmonth="";
+            let currentmonth="";
+            let birthdate="";
+            let todaydate="";
+            let data=document.getElementById("data").value;
+            let currentdate=document.getElementById("currentdate").value;
+            let result=document.getElementById("result");
+            for(let i=0; i<data.length; i++){
+                arr.push(data[i]);
+            }
+            console.log(arr);
+            for(let j=0; j<currentdate.length; j++){
+                arr2.push(currentdate[j]);
+            }
+
+            for(let k=0; k<4; k++){
+                birthyear+= arr[k];
+            }
+           birthyear = +birthyear;
+
+           for(let k=0; k<4; k++){
+                currentyear+= arr2[k];
+            }
+           currentyear = +currentyear;
+
+           let year= currentyear-birthyear;
+           console.log(year)
+
+           for(let k=5; k<7; k++){
+                birthmonth+= arr[k];
+            }
+           birthmonth = +birthmonth;
+
+           for(let k=5; k<7; k++){
+            currentmonth+= arr2[k];
+            }
+            currentmonth = +currentmonth;
+
+            let month= currentmonth-birthmonth;
+            console.log(month);
+
+        for(let k=8; k<=9; k++){
+            birthdate+= arr[k];
+            }
+            birthdate = +birthdate;
+
+           for(let k=8; k<=9; k++){
+            todaydate+= arr2[k];
+            }
+            todaydate = +todaydate;
+
+            let days= todaydate-birthdate;
+            console.log(days);
+
+            result.innerHTML=(`${year} year, ${month} month , ${days} days`);
+        }
+
+
+
+    </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
