@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather API</title>
+</head>
+<body>
+    <label>Enter Your City</label>
+    <input type="text" id="city">
+    <br>
+    <button onclick="myFunc()"> Click Me!</button>
+    <div id="show"></div>
+    <script>
+        function myFunc(){
+            let city=document.getElementById("city").value;
+            fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=ab845a312573796f136837a1fe7953f7`)
+            .then((res)=>res.json())
+            .then((data) => {
+                     var weatherdata=new Array();
+                     var weathertempdata=new Array();
+                     cityname = data['name'];
+                     weatherdata = data['weather'];
+                    
+                     document.getElementById("show").innerHTML=`${cityname} weather is: ${weatherdata[0].description}`;
+
+              })
+              document.getElementById("city").value="";
+       }
+
+    </script>
+</body>
+</html>
