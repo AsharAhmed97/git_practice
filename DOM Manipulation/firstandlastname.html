@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First & Last Name</title>
+</head>
+<body>
+ <label>Enter First Name</label>
+ <input type="text" id="firstName">
+ <br>
+ <label>Enter Last Name</label>
+ <input type="text" id="lastName">
+ <br>
+ <button id="mybtn">clickMe!</button>
+<div id="show">
+
+</div>
+ <script>
+     const myFunc=()=>{
+        let firstName=document.getElementById("firstName").value;
+        let lastName=document.getElementById("lastName").value;
+        document.getElementById("show").innerHTML=(`${firstName} <br> ${lastName}`)
+    }
+
+    let mybtn=document.getElementById("mybtn").addEventListener("click", myFunc);
+ </script>
+</body>
+</html>

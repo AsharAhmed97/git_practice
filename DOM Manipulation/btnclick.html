@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>btn click event listener</title>
+</head>
+<body>
+    <p id="myPara">This is a paragraph.</p>
+    <button id="mybtn">click me!</button>
+</body>
+
+<script>
+    // let myParagraph= document.getElementsByTagName("p")[0];
+    let myParagraph= document.getElementById("myPara");
+    console.log(myParagraph);
+    let mybtn= document.getElementById("mybtn");
+    const myFunc=()=>{
+        myParagraph.style.color="blue";
+        myParagraph.style.font="ariel";
+        myParagraph.style.fontSize="25px"
+    }
+    mybtn.addEventListener("click", myFunc);
+</script>
+</html>

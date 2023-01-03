@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Items Count</title>
+</head>
+<body>
+   <select id="myColors">
+    <option>Red</option>
+    <option>Green</option>
+    <option>Blue</option>
+    <option>Pink</option>
+    <option>black</option>
+   </select>
+<button id="myBtn">click Me!</button>
+   <script>
+       const myFunc=()=>{
+        let data="";
+        let myColors=document.getElementById("myColors");
+        for(let i=0;i<myColors.length;i++){
+            data+=(myColors[i].innerText)+ "\n";
+        }
+        alert(data+"The lenght is: "+myColors.length);
+    }
+    let myBtn=document.getElementById("myBtn").addEventListener("click", myFunc)
+   </script>
+</body>
+</html>
